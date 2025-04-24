@@ -6,6 +6,7 @@ require("lazy").setup({
         { import = "plugins.telescope" },
         { import = "plugins.lspconfig" },
         { import = "plugins.cmp" },
+        { import = "plugins.treesitter" },
     },
     checker = { enabled = true },
 })
