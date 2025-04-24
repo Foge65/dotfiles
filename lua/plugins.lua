@@ -4,6 +4,7 @@ require("lazy").setup({
         { import = "plugins.mason" },
         { import = "plugins.gitsigns" },
         { import = "plugins.telescope" },
+        { import = "plugins.lspconfig" },
     },
     checker = { enabled = true },
 })
