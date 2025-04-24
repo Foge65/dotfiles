@@ -5,6 +5,7 @@ require("lazy").setup({
         { import = "plugins.gitsigns" },
         { import = "plugins.telescope" },
         { import = "plugins.lspconfig" },
+        { import = "plugins.cmp" },
     },
     checker = { enabled = true },
 })
