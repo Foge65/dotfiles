@@ -21,3 +21,5 @@ vim.keymap.set('i', '[<CR>', '[<CR>]<ESC>O', describe(opts, ""))
 vim.keymap.set('i', '[;<CR>', '[<CR>];<ESC>O', describe(opts, ""))
 vim.keymap.set('i', '<C-H>', '<C-w>', describe(opts, "Delete previous word"))
 
+vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', describe(opts, ""))
+
