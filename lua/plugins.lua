@@ -9,6 +9,7 @@ require("lazy").setup({
         { import = "plugins.treesitter" },
         { import = "plugins.neotest" },
         { import = "plugins.neotest-java" },
+        { import = "plugins.nerdtree" },
     },
     checker = { enabled = true },
 })
