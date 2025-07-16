@@ -10,6 +10,7 @@ require("lazy").setup({
         { import = "plugins.neotest" },
         { import = "plugins.neotest-java" },
         { import = "plugins.nerdtree" },
+        { import = "plugins.which-key" },
     },
     checker = { enabled = true },
 })
