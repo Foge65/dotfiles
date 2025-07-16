@@ -1,8 +1,8 @@
 return {
     "preservim/nerdtree",
     config = function()
-        vim.keymap.set('n', '<C-t>', ':NERDTreeToggle<CR>')
-        vim.keymap.set('n', '<C-f>', ':NERDTreeFind<CR>')
+        vim.keymap.set('n', '<leader><C-t>', ':NERDTreeToggle<CR>', {desc = "NerdTree toggle"})
+        vim.keymap.set('n', '<leader><C-f>', ':NERDTreeFind<CR>', {desc = "NerdTree find current file"})
 
         vim.api.nvim_create_autocmd("BufEnter", {
             callback = function()
