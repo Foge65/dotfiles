@@ -11,6 +11,15 @@ return {
                 '-data', vim.fn.expand('~/.cache/jdtls-workspace/') .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
             },
         })
+
+        require("lspconfig").ts_ls.setup({
+            filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+            root_dir = function(fname)
+                return require("lspconfig.util").root_pattern("package.json", "yarn.lock", "tsconfig.json", ".git")(fname)
+                    or vim.loop.cwd()
+            end,
+        })
+
     end
 }
 
