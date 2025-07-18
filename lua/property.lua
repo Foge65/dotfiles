@@ -6,3 +6,10 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 
+vim.diagnostic.config({
+  virtual_text = {
+    spacing = 4,
+    prefix = "●",
+  },
+})
+
