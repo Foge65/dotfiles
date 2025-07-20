@@ -20,6 +20,15 @@ return {
             end,
         })
 
+        require("lspconfig").sqls.setup({
+            on_attach = function(client, bufnr)
+                require('sqls').on_attach(client, bufnr)
+            end,
+            root_dir = function()
+                return vim.loop.cwd()
+            end,
+        })
+
     end
 }
 

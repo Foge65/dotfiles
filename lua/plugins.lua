@@ -11,6 +11,7 @@ require("lazy").setup({
         { import = "plugins.neotest-java" },
         { import = "plugins.nerdtree" },
         { import = "plugins.which-key" },
+        { import = "plugins.sqls" },
     },
     checker = { enabled = true },
 })
