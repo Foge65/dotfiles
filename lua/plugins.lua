@@ -13,6 +13,7 @@ require("lazy").setup({
 		{ import = "plugins.nerdtree" },
 		{ import = "plugins.which-key" },
 		{ import = "plugins.sqls" },
+		{ import = "plugins.conform" },
 	},
 	checker = { enabled = true },
 })
