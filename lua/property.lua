@@ -13,3 +13,5 @@ vim.diagnostic.config({
   },
 })
 
+vim.opt.ignorecase = true
+
