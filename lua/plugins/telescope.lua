@@ -19,7 +19,9 @@ return {
         }
 
         vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Telescope find" })
-        vim.keymap.set('n', '<leader>pb', builtin.buffers,    { desc = "Telescope buffer" })
+        vim.keymap.set('n', '<leader>pb', builtin.buffers, { desc = "Telescope buffer" })
+        vim.keymap.set('n', '<leader>pg', builtin.live_grep, { desc = "Telescope live grep" })
+        vim.keymap.set('n', '<leader>H', builtin.help_tags, { desc = "Telescope help tags" })
     end,
 }
 
