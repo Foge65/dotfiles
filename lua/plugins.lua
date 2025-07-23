@@ -14,6 +14,7 @@ require("lazy").setup({
 		{ import = "plugins.which-key" },
 		{ import = "plugins.sqls" },
 		{ import = "plugins.conform" },
+		{ import = "plugins.dadbod" },
 	},
 	checker = { enabled = true },
 })
