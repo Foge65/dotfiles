@@ -23,3 +23,10 @@ vim.keymap.set('i', '<C-H>', '<C-w>', describe(opts, "Delete previous word"))
 
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', describe(opts, ""))
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "qf",
+    callback = function()
+        vim.keymap.set("n", "q", ":cclose<CR>", { buffer = true, noremap = true, silent = true, desc = "Close quickfix list" })
+    end,
+})
+

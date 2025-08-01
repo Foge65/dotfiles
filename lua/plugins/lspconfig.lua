@@ -10,6 +10,13 @@ return {
                 '-configuration', home .. '/.local/share/nvim/mason/packages/jdtls/config_linux',
                 '-data', vim.fn.expand('~/.cache/jdtls-workspace/') .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
             },
+            on_attach = function(_, bufnr)
+                local opts = { noremap = true, silent = true, buffer = bufnr }
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts, {desc = "Go to definition"})
+                vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts, {desc = "Go to implementation"})
+                vim.keymap.set("n", "gr", vim.lsp.buf.references, opts, {desc = "Go to references"})
+                vim.keymap.set("n", "gq", vim.lsp.buf.hover, opts, {desc = "Show describe"})
+            end,
         })
 
         require("lspconfig").ts_ls.setup({
