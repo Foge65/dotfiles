@@ -15,6 +15,13 @@ return {
                 end
             end,
         })
+
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = "nerdtree",
+            callback = function()
+                vim.cmd("vertical resize 45")
+            end,
+        })
     end
 }
 
