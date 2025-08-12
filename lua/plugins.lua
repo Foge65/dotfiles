@@ -15,6 +15,7 @@ require("lazy").setup({
 		{ import = "plugins.sqls" },
 		{ import = "plugins.conform" },
 		{ import = "plugins.dadbod" },
+		{ import = "plugins.autosession" },
 	},
 	checker = { enabled = true },
 })
