@@ -7,6 +7,10 @@ return {
         "antoinemadec/FixCursorHold.nvim",
         "rcasia/neotest-java",
     },
+    keys = {
+        { "<leader>ts", "<cmd>Neotest summary<cr>", desc = "Toggle Neotest summary" },
+        { "<leader>tf", "<cmd>Neotest run<cr>",     desc = "Run tests in current file" },
+    },
     config = function()
         require("neotest").setup({
             adapters = {
@@ -15,6 +19,12 @@ return {
                 }),
             },
         })
-    end
-}
 
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "NeotestSummaryOpened",
+            callback = function()
+                require("neotest").run.run(vim.fn.getcwd())
+            end
+        })
+    end,
+}
