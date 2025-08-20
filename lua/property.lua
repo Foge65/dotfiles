@@ -15,7 +15,7 @@ vim.diagnostic.config({
 
 vim.opt.ignorecase = true
 
-vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "BufWritePre" }, {
     pattern = "*",
     callback = function()
         if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
