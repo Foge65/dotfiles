@@ -2,7 +2,7 @@ local function describe(x, desc)
     return vim.tbl_extend("force", x, { desc = desc })
 end
 
-vim.g.mapleader=' '
+vim.g.mapleader = ' '
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, describe(opts, 'Open file manger'))
 vim.keymap.set('i', '"', '""<left>', describe(opts, 'Replace " to ""'))
@@ -26,7 +26,16 @@ vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', describe(opts, ""))
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "qf",
     callback = function()
-        vim.keymap.set("n", "q", ":cclose<CR>", { buffer = true, noremap = true, silent = true, desc = "Close quickfix list" })
+        vim.keymap.set("n", "q", ":cclose<CR>",
+            { buffer = true, noremap = true, silent = true, desc = "Close quickfix list" })
     end,
 })
 
+vim.keymap.set("n", "<leader>f", function()
+    vim.lsp.buf.format({ async = true })
+end, { desc = "LSP format buffer" })
+
+vim.keymap.set("v", "<leader>f", function()
+    vim.lsp.buf.format({ async = true })
+    vim.cmd("normal! <Esc>")
+end, { desc = "LSP format selection" })

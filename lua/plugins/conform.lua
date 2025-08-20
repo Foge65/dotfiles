@@ -14,18 +14,12 @@ return {
                     stdin = true,
                 },
             },
-            format_on_save = {
-                timeout_ms = 500,
-                lsp_fallback = true,
-            },
+            format_on_save = false,
         })
 
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*.sql",
-            callback = function(args)
-                conform.format({ bufnr = args.buf })
-            end,
-        })
+        vim.keymap.set("n", "<leader>f", function()
+            conform.format({ async = true })
+        end, { desc = "Format buffer" })
 
         vim.api.nvim_create_user_command("FormatSQL", function()
             local start_pos = vim.fn.getpos("'<")
@@ -95,8 +89,7 @@ return {
             vim.notify("Formatted with sql-formatter")
         end, { range = true, desc = "Format SQL inside JS template string", })
 
-        vim.api.nvim_set_keymap("v", "<leader>fs", ":FormatSQL<CR>", { noremap = true, silent = true, desc = "Formart SQL syntax" })
-
+        vim.api.nvim_set_keymap("v", "<leader>fs", ":FormatSQL<CR>",
+            { noremap = true, silent = true, desc = "Formart SQL syntax" })
     end,
 }
-
