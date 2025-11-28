@@ -18,6 +18,7 @@ require("lazy").setup({
         { import = "plugins.dadbod" },
         { import = "plugins.autosession" },
         { import = "plugins.lualine" },
+        { import = "plugins.lspkind" }
     },
     checker = { enabled = true },
 })
