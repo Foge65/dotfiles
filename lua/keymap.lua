@@ -39,3 +39,8 @@ vim.keymap.set("v", "<leader>f", function()
     vim.lsp.buf.format({ async = true })
     vim.cmd("normal! <Esc>")
 end, { desc = "LSP format selection" })
+
+vim.keymap.set("n", "<C-k>", ":resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<C-j>", ":resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<C-h>", ":vertical resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<C-l>", ":vertical resize +2<CR>", { silent = true })
